@@ -34,10 +34,10 @@ Install git and nano
 
 Clone the iso-builder
 
-    mkdir /home/luminaremix
-    cd /home/luminaremix
-    git clone https://github.com/ubuntu-lumina/iso-builder-amd64 -b ubuntulumina
-    cd iso-builder-amd64
+    mkdir /home/border-os
+    cd /home/border-os
+    git clone https://github.com/borderOS/iso-builder -b borderOS
+    cd iso-builder
 
 At this point configure etc/terraform.conf for the build you wish to make e.g. 20.04 and focal - ensure you decide between unstable or all PPAs.
 
@@ -66,7 +66,7 @@ This will eventually complete - ignore any errors EXCEPT for 404 repository erro
 
 You will now be back in the container i.e. with a /# prompt
 
-    cd /home/luminaremix/iso-builder-amd64
+    cd /home/border-os/iso-builder
 
     ./terraform.sh
 
@@ -76,7 +76,7 @@ This will take approx 20-60 minutes but will depend on your host OS CPU power an
 
 On your host, copy the build folder from your docker container
 
-    sudo docker cp containerID:/home/luminaremix/iso-builder-amd64/builds/amd64 .
+    sudo docker cp containerID:/home/border-os/iso-builder/builds/amd64 .
 
 Finish by shutting down the container
 
